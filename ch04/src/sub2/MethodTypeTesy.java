@@ -20,6 +20,7 @@ public class MethodTypeTesy {
 
 	boolean result =type3();
 	System.out.println("result :" +result);
+	type4();
 	
 		
 	}
@@ -45,6 +46,7 @@ public class MethodTypeTesy {
 		int num2 =2;
 		
 		if(num1 > num2) {
+			return true;
 		}else {
 				return false;
 			
