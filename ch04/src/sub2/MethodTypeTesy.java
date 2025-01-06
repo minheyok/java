@@ -10,7 +10,7 @@ public class MethodTypeTesy {
 	
 		// 메서드 호출
 	double y1 = type1(1.2); // 인자값 : 메서드를 홏풀할때 전달하는 값
-	double y2 = type1(3.4);
+	double y2 = type1(2.7);
 	
 	System.out.println("y1 :" +y1);
 	System.out.println("y2 :" +y2);
@@ -59,7 +59,8 @@ public class MethodTypeTesy {
 	public static void type4() {
 		
 		double result = type1(2.3);
-		System.out.println("반지름 2.3인 ");
+		
+		System.out.println("반지름 2.3인 넓이 " + result);
 		
 		
 	}
