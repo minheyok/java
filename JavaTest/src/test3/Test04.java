@@ -38,7 +38,7 @@ public class Test04 {
 		Student lee = new Student("이순신","경제학과",1);
 		lee.studentInfo();
 		
-		Student lim = new Student("임꺽정","경제학과",1);
+		Student lim = new Student("임꺽정","경영학과",1);
 		lim.studentInfo();
 
 		
