@@ -49,19 +49,16 @@ public class RegExTest {
 		for(String word : words) {
 			System.out.print(word + " 문자와 일치하는 패턴 : ");
 			
-			for(String ptt : patterns) {
-				boolean result = Pattern.matches(ptt, word);
+		for(String ptt : patterns) {
+		boolean result = Pattern.matches(ptt, word);
 				
-				if(result) {
-					System.out.println(ptt + ", ");
+		if(result) {
+			System.out.println(ptt + ", ");
 					
 				}
 			}
 			System.out.println("\n");
-		}
-		
-		
-		
+		}	
 	}
 
 }
