@@ -35,17 +35,22 @@ public class HttpTest {
 				String line = null;
 						
 				while((line = br.readLine()) != null) { //br.readLine():사용하여 한줄씩 읽고 그 줄을 출력하고 파일에 저장함
-					System.out.println(line);
-					fos.write(line.getBytes());	
-				}
+					System.out.println(line);			//!= null 이 조건은 파일의 끝에 도달할 때 까지 반복문을 실행시킴 // 파일에 끝에 도달하면 (readLine) 메서드는 null 을 반환시킴
+					fos.write(line.getBytes());			// for=FileOutputStream 객체로 파일에 데이터를 쓰는 데 사용	
+				}										//line.getBytes():문자열 line 을 바이트 배열로 변환
+														//FileOutputStream:은 바이트 단위로 데이터를 처리 하므로 문자열을 바이트로 변환해야함
 				
-				br.close();
-				fos.close();
+				br.close();		//close() 호출을 하면 해당 객체는 재사용 불가함
+				fos.close();	//close() 호출을 하면 해당 객체는 재사용 불가함
 				
-			}catch (IOException e) {	
-				e.printStackTrace();
+			}catch (IOException e) {		//IOException e -- 일반적인 입출력 작업 중 발생하는 모든 예외를 포괄
+				e.printStackTrace();		//예시--네트워크 연결실패,스트림 작업 실패,파일 시스템 문제 등..입출력 작업 중 발생할 수 있는 모든 문제(파일,네트워크,스트림 등 포함)
+				//예외가 발생한 메서드와 파일 이름, 라인 번호를 순서대로 출력.
+				//예외가 발생한 메서드에서 호출된 메서드를 추적해 나갑니다.
+
+				
 			}
-			}catch (MalformedURLException e) {
+			}catch (MalformedURLException e) {	//MalformedURLException e -- URL형식이 잘못되었을 때 발생하는 예외를 처리함
 			e.printStackTrace();
 			}
 		
