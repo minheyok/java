@@ -15,19 +15,26 @@ import java.net.URL;
 public class HttpTest {
 	public static void main(String[] args) {
 		
-		FileOutputStream fos = null;
-		BufferedReader br = null;
+		FileOutputStream fos = null; //FileOutputStream:파일에 데이터를 쓰기위해 사용하는 클래스
+									//데이터를 바이트(byte)단위로 처리하고 텍스트나 바이너리 데이터를 파일에 저장할때 사용 
+		
+		BufferedReader br = null;	//BufferedReade:파일이나 스트림에서 데이터를 읽기위해 사용하는 클래스
+									// 데이터를 한 줄씩 읽을수 있고 내부버퍼를 이용해 속도를 최적화함
+		
+			// 바이너리 데이터
+			// 모든 데이터(이미지,영상,음악...)등 0과1로만 이루어진 이준수로 이루어져있다
+		
 		
 		try {
-			URL url = new URL("https://google.com");
+			URL url = new URL("https://google.com"); // URL 객체 생성:google 사이트 URL을 지정
 			
 			try {
-				br = new BufferedReader(new InputStreamReader(url.openStream()));
-				fos = new FileOutputStream("./result.txt");
+				br = new BufferedReader(new InputStreamReader(url.openStream())); // URL에서 입력 스트림을 열어서 데이터를 읽기 위한 BufferedReader 생성
+				fos = new FileOutputStream("./result.txt"); //FileOutputStream:읽은 데이터를 result.txt"파일에 저장함
 				
 				String line = null;
 						
-				while((line = br.readLine()) != null) {
+				while((line = br.readLine()) != null) { //br.readLine():사용하여 한줄씩 읽고 그 줄을 출력하고 파일에 저장함
 					System.out.println(line);
 					fos.write(line.getBytes());	
 				}
